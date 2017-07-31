@@ -1,0 +1,112 @@
+body {
+
+background-color: #0E3D34;
+
+}
+
+div {
+  margin-top: 10%;
+}
+
+p {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-style: bold;
+
+}
+
+h5 {
+
+  color: #ffffff;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-style: bold;
+  text-decoration: none;
+
+}
+
+h5.buttonLabel {
+
+  position: absolute;
+
+  margin-top:15px;
+  margin-left: 5%;
+
+}
+
+a {
+
+  text-decoration: none;
+
+}
+
+
+#timer {
+
+  color: #ffffff;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-style: bold;
+}
+
+#nextButton {
+
+  color: white;
+  background-color: rgb(102,204, 102);
+  width: 200px;
+  height: 55px;
+  border-radius: 5px;
+  bottom: 15%;
+  text-decoration: none;
+
+  left: 50%;
+  right: 50%;
+
+  margin-top:10px;
+  margin-left:-15px;
+
+}
+#answerButton {
+  color: white;
+  background-color: rgb(102, 204, 102);
+  width: 55px;
+  height: 55px;
+  border-radius:30px;
+  position: absolute;
+  left: 20%;
+  bottom: 12%;
+}
+
+#declineButton {
+  color: white;
+  background-color: rgb(232, 78, 79);
+  width: 55px;
+  height: 55px;
+  border-radius:30px;
+  position: absolute;
+  right: 20%;
+  bottom: 12%;
+}
+
+#endCallButton {
+  color: white;
+  background-color: rgb(232, 78, 79);
+  width: 55px;
+  height: 55px;
+  border-radius:30px;
+  bottom: 12%;
+}
+
+img.phone {
+
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+
+  margin-top:10px;
+  margin-left:-15px;
+
+}
