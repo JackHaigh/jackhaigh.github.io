@@ -63,7 +63,7 @@
   <div id="1">
 
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
-    <a href ='#' onclick="loadPage('2'); ringtone.play(); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
 
   </div>
 
@@ -71,7 +71,7 @@
 
     <canvas data-processing-sources = 'processing_SignalBar.pde'></canvas>
 
-    <a href ='#' onclick="loadPage('3'); ringtone.pause(); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
+    <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
     <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
 
   </div>
@@ -110,9 +110,6 @@ var ringtone;
 // enable vibration support
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
-if (navigator.vibrate) {
-	navigator.vibrate(1000);
-}
 
 function loadPage(page) {
 
