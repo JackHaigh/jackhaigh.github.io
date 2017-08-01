@@ -62,7 +62,7 @@
     <p id="test_status">Test</p>
 
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
-    <a href ='#' onclick="loadPage('2'); playRingtone(); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    <a href ='#' onclick="loadPage('2'); ringtone.play(); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
 
   </div>
 
@@ -73,7 +73,7 @@
 
     <canvas data-processing-sources = 'processing_SignalBar.pde'></canvas>
 
-    <a href ='#' onclick="loadPage('3'); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
+    <a href ='#' onclick="loadPage('3'); ringtone.pause(); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
     <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
 
   </div>
@@ -86,7 +86,7 @@
     <p id = 'timer'><span id ="tracktime"></span></p>
 
     <canvas data-processing-sources = 'processing_SignalBar.pde'></canvas>
-    <a href = '#' onclick="loadPage('4'); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
+    <a href = '#' onclick="loadPage('4'); sample.pause(); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
 
 
   </div>
@@ -145,19 +145,14 @@ function updateSession() {
   document.getElementById('name').innerHTML = names[sessionNumber-1];
   document.getElementById('test_status').innerHTML = sessionNumber + " of " + names.length;
 
-function playSample(){
 
   var sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
-  sample.play();
-
-}
-
-function playRingtone(){
+  //sample.play();
 
   var ringtone = new Audio('ringtone.mp3');
-  ringtone.play();
+  //ringtone.play();
 
-}
+
 </script>
 
 
