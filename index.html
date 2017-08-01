@@ -55,15 +55,6 @@
 
 <body>
 
-<audio id="ringtone">
-  <source src = "ringtone.mp3" type = "audio/mpeg">
-</audio>
-
-<audio id ="audioSample"
-  ontimeupdate="document.getElementById('tracktime').innerHTML = '00 : ' + Math.floor(this.currentTime);">
-    <source src="samples/" type="audio/mpeg">
-</audio>
-
 <center>
   <div id="1">
 
@@ -71,7 +62,7 @@
     <p id="test_status">Test</p>
 
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
-    <a href ='#' onclick="loadPage('2'); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    <a href ='#' onclick="loadPage('2'); playRingtone(); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
 
   </div>
 
@@ -154,6 +145,12 @@ function updateSession() {
   document.getElementById('name').innerHTML = names[sessionNumber-1];
   document.getElementById('test_status').innerHTML = sessionNumber + " of " + names.length;
 
+function playRingtone(){
+
+  var ringtone = new Audio('samples/'+audioTrack[sessionNumber-1]);
+  ringtone.play();
+
+}
 </script>
 
 
