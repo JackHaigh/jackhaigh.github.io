@@ -56,10 +56,11 @@
 <body>
 
 <center>
-  <div id="1">
 
-    <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
-    <p id="test_status">Test</p>
+  <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
+  <p id="test_status">Test</p>
+
+  <div id="1">
 
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
     <a href ='#' onclick="loadPage('2'); ringtone.play(); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
@@ -67,9 +68,6 @@
   </div>
 
   <div id="2" style="display:none">
-
-    <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
-    <p id="name">Name</p>
 
     <canvas data-processing-sources = 'processing_SignalBar.pde'></canvas>
 
@@ -80,21 +78,16 @@
 
   <div id = "3" style="display:none">
 
-
-    <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
-    <p id="name">Name</p>
     <p id = 'timer'><span id ="tracktime"></span></p>
 
     <canvas data-processing-sources = 'processing_SignalBar.pde'></canvas>
-    <a href = '#' onclick="loadPage('4'); sample.pause(); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
+    <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
 
 
   </div>
 
   <div id = "4" style="display:none">
 
-    <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
-    <p id="name">Name</p>
 
     <h5>Please use the scale provided to rate the quality of this sample. Click Next to proceed to the next sample.</h5>
 
@@ -109,18 +102,21 @@
 
 var names = ["Joe Bloggs", "Mary Bloggs", "Name #3", "Name #4", "Name #5", "Name #6"];
 var audioTrack = ["49.mp3", "50.mp3", "51.mp3", "52.mp3", "53.mp3", "54.mp3"];
+var sessionNumber = 0;
 
-var sessionNumber = 1;
+var sample;
+var ringtone;
+
 
 function loadPage(page) {
 
+  var showDiv = document.getElementById(page).style.display='block';
+
   if(page == '1')
   {
-    document.getElementById(page).style.display='block';
     document.getElementById('4').style.display='none';
   }
   else {
-    var showDiv = document.getElementById(page).style.display='block';
     var hideDiv = document.getElementById(page-1).style.display='none';
   }
 
@@ -134,23 +130,19 @@ function updateSession() {
   if(sessionNumber > names.length){
 
     sessionNumber = 1;
+    alert("You have completed the test, please return the handset.")
+
   }
 
+  sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
+  ringtone = new Audio('ringtone.mp3');
 
-  document.getElementById('test_status').innerHTML = sessionNumber + " of " + names.length;
-
-  document.getElementById('name').innerHTML = names[sessionNumber-1];
+  var headChange = document.getElementById('test_status');
+  headChange.innerHTML = names[sessionNumber-1];
 }
 
-  document.getElementById('name').innerHTML = names[sessionNumber-1];
-  document.getElementById('test_status').innerHTML = sessionNumber + " of " + names.length;
+window.onload = updateSession;
 
-
-  var sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
-  //sample.play();
-
-  var ringtone = new Audio('ringtone.mp3');
-  //ringtone.play();
 
 
 </script>
