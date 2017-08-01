@@ -145,9 +145,16 @@ function updateSession() {
   document.getElementById('name').innerHTML = names[sessionNumber-1];
   document.getElementById('test_status').innerHTML = sessionNumber + " of " + names.length;
 
+function playSample(){
+
+  var sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
+  sample.play();
+
+}
+
 function playRingtone(){
 
-  var ringtone = new Audio('samples/'+audioTrack[sessionNumber-1]);
+  var ringtone = new Audio('ringtone.mp3');
   ringtone.play();
 
 }
