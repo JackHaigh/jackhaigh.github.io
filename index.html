@@ -57,7 +57,7 @@
 
 <center>
 
-  <img id='avatar' src = 'img/avatar.png' width = '100' height = '100'>
+  <img id = 'mainAvatar' class='avatar' src = 'img/avatar.png' width = '100' height = '100'>
   <p id="test_status">Test</p>
 
   <div id="1">
@@ -102,6 +102,7 @@
 
 var names = ["Megan Lawson", "Michael Matthews", "Linda Fowler", "Joseph Porter", "Patricia Wood", "Billy Carroll"];
 var audioTrack = ["49.mp3", "50.mp3", "51.mp3", "52.mp3", "53.mp3", "54.mp3"];
+var avatar = ["img/avatars/f1.jpg", "img/avatars/m1.jpg", "img/avatars/f2.jpg", "img/avatars/m2.jpg", "img/avatars/f3.jpg", "img/avatars/m3.jpg"];
 var sessionNumber = 0;
 
 var sample;
@@ -140,8 +141,10 @@ function updateSession() {
   sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
   ringtone = new Audio('ringtone.mp3');
 
+  document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
   headChange.innerHTML = names[sessionNumber-1];
+
 }
 
 window.onload = updateSession;
