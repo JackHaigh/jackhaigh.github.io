@@ -126,6 +126,13 @@ function loadPage(page) {
     var hideDiv = document.getElementById(page-1).style.display='none';
   }
 
+  if(page == '2' || '3'){
+
+    document.getElementsByTagName('canvas').dataprocessingsources='processing_SignalBar_log_10.pde';
+
+
+  }
+
   return false;
 }
 
