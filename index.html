@@ -69,7 +69,7 @@
 
   <div id="2" style="display:none">
 
-    <canvas data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
+    <canvas id ='scale' data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
 
     <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
     <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
@@ -80,7 +80,7 @@
 
     <p id = 'timer'><span id ="tracktime"></span></p>
 
-    <canvas data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
+    <canvas id = 'scale' data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
     <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
 
 
@@ -110,6 +110,7 @@ var ringtone;
 
 // enable vibration support
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
 
 
 function loadPage(page) {
