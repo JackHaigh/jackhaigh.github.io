@@ -10,9 +10,11 @@ float timer = 0;
 
 void setup(){
  
-  size(350,300);
+  size(350,350);
   background(14, 61, 52);
-
+  stroke(0);
+  fill(9, 39, 33);
+  rect(3,3,342,342,20);
 // Construct outlines of scale
   for(i = 1; i <=10; i++)
   {
@@ -24,11 +26,22 @@ void setup(){
 
   }
 
+
+    fill(255);
+    textSize(10);
+    text("Low", 30, 300);
+    text("Medium", 150, 300);
+    text("High", 300, 300);
+    textSize(20);
+    text("Call Quality", 120, 25);
+    
+
 }
 
 void draw(){
     frameRate(30);
     signalAnimation();
+
 }
 
 void signalAnimation(){
