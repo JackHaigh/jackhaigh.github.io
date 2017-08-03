@@ -5,6 +5,7 @@ background-color: #0E3D34;
 
 div.head {
   margin-top: 10%;
+  margin-bottom: -2%;
 }
 
 p {
@@ -59,6 +60,8 @@ canvas {
   transform: scale(0.5, 0.5);
 
 }
+
+
 #timer {
 
   color: #ffffff;
