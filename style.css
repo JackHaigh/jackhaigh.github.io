@@ -55,9 +55,9 @@ border-radius: 50%;
 
 canvas {
 
-  -ms-transform: scale(0.5, 0.5); /* IE 9 */
-  -webkit-transform: scale(0.5, 0.5); /* Safari */
-  transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.4, 0.4); /* IE 9 */
+  -webkit-transform: scale(0.4, 0.4); /* Safari */
+  transform: scale(0.4, 0.4);
 
 }
 
