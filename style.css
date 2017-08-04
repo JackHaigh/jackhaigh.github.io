@@ -54,10 +54,11 @@ border-radius: 50%;
 }
 
 canvas {
-
-  -ms-transform: scale(0.4, 0.4); /* IE 9 */
-  -webkit-transform: scale(0.4, 0.4); /* Safari */
-  transform: scale(0.4, 0.4);
+  padding: 0px;
+  margin:0px;
+  -ms-transform: scale(0.2, 0.2); /* IE 9 */
+  -webkit-transform: scale(0.2, 0.2); /* Safari */
+  transform: scale(0.2, 0.2);
 
 }
 
