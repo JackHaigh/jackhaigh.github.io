@@ -8,6 +8,12 @@ div.head {
   margin-bottom: -2%;
 }
 
+div.stimulusArea {
+  padding: 0px;
+  margin: 0px;
+
+}
+
 p {
   color: #ffffff;
   font-size: 30px;
@@ -54,11 +60,10 @@ border-radius: 50%;
 }
 
 canvas {
-  padding: 0px;
-  margin:0px;
-  -ms-transform: scale(0.2, 0.2); /* IE 9 */
-  -webkit-transform: scale(0.2, 0.2); /* Safari */
-  transform: scale(0.2, 0.2);
+  
+  -ms-transform: scale(0.3, 0.3); /* IE 9 */
+  -webkit-transform: scale(0.3, 0.3); /* Safari */
+  transform: scale(0.3, 0.3);
 
 }
 
