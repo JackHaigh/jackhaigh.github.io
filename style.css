@@ -1,6 +1,6 @@
 body {
 margin: 5%;
-margin-top: 35%;
+
 background-color: #0E3D34;
 
 }
@@ -9,24 +9,8 @@ div.head {
   margin-bottom: -2%;
   width: 100%;
   text-align: center;
-  position:fixed;
+
   top: 5%;
-
-  /* Firefox */
-    display:-moz-box;
-    -moz-box-pack:center;
-    -moz-box-align:center;
-
-    /* Safari and Chrome */
-    display:-webkit-box;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-
-    /* W3C */
-    display:box;
-    box-pack:center;
-    box-align:center;
-
 
 }
 
