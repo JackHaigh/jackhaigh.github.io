@@ -87,9 +87,9 @@ border-radius: 50%;
 canvas {
 
   position: block;
-  -ms-transform: scale(0.3, 0.3); /* IE 9 */
-  -webkit-transform: scale(0.3, 0.3); /* Safari */
-  transform: scale(0.3, 0.3);
+  -ms-transform: scale(0.4, 0.4); /* IE 9 */
+  -webkit-transform: scale(0.4, 0.4); /* Safari */
+  transform: scale(0.4, 0.4);
 
   padding-left: 0;
   padding-right: 0;
