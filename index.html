@@ -64,15 +64,19 @@
   <div id="1">
 
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
-    <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
 
+    <div class = 'controls'>
+      <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    </div>
   </div>
 
   <div id="2" style="display:none" class = 'stimulusArea'>
     <canvas id ='scale' data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
 
-    <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
-    <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
+    <div class = 'controls'>
+      <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
+      <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
+    </div>
 
   </div>
 
@@ -81,10 +85,14 @@
     <p id = 'timer'></p>
 
     <canvas id = 'scale' data-processing-sources = 'processing_SignalBar_log_10.pde'></canvas>
-    <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
+
+    <div class = 'controls'>
+      <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
+    </div>
 
 
   </div>
+
 
   <div id = "4" style="display:none">
 

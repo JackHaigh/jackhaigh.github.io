@@ -1,6 +1,7 @@
 body {
 
 background-color: #0E3D34;
+padding-bottom: 30px;
 }
 
 div.head {
@@ -9,8 +10,16 @@ div.head {
 }
 
 div.stimulusArea {
-  padding: 0px;
-  margin: 0px;
+  position: relative;
+  width: 100%;
+
+}
+
+div.controls {
+
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
 
 }
 
@@ -60,10 +69,18 @@ border-radius: 50%;
 }
 
 canvas {
-  
+
+  position: block;
   -ms-transform: scale(0.3, 0.3); /* IE 9 */
   -webkit-transform: scale(0.3, 0.3); /* Safari */
   transform: scale(0.3, 0.3);
+
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
 
 }
 
@@ -122,6 +139,8 @@ canvas {
   height: 55px;
   border-radius:30px;
   bottom: 10%;
+  left: 50%;
+  right: 50%;
 }
 
 img.phone {
