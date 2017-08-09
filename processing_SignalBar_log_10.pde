@@ -30,9 +30,9 @@ void setup(){
 
     fill(255);
     textSize(15);
-    text("Low", 70, 400);
-    text("Medium", 215, 400);
-    text("High", 370, 400);
+    text("Bad", 70, 400);
+    text("Fair", 215, 400);
+    text("Excellent", 340, 400);
     textSize(30);
     text("Call Quality", 180, 35);
     
