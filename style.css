@@ -1,5 +1,5 @@
 body {
-margin right, top, bottom: 5%;
+margin-top: 5%;
 
 background-color: #0E3D34;
 
@@ -63,8 +63,8 @@ h5 {
 }
 
 h5.buttonLabel {
-
-  margin-top:15px;
+  position: relative;
+  padding-top: 2%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -115,7 +115,8 @@ canvas {
 
   color: white;
   background-color: rgb(102,204, 102);
-  width: 200px;
+  width: auto;
+  padding-left, padding-right: 5%;
   height: 55px;
   border-radius: 5px;
   bottom: 15%;
