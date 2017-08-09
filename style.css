@@ -89,8 +89,7 @@ border-radius: 50%;
 
 canvas {
 
-
-
+  padding-top: 5%;
   width: 200px;
   height: 200px;
   padding-left: 0;
