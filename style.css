@@ -116,8 +116,8 @@ canvas {
 
   color: white;
   background-color: rgb(102,204, 102);
-  width: auto;
-  padding-left, padding-right: 5%;
+  width: 500px;
+  margin: 10px;
   height: 55px;
   border-radius: 5px;
   bottom: 15%;
