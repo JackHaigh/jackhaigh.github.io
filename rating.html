@@ -1,0 +1,179 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>VoIP UI</title>
+
+
+</head>
+
+<body>
+
+
+<div class = 'head'>
+
+  <p class='headText'>Quality Rating Scoring</p>
+
+</div>
+
+  <div id="1">
+    <br><br>
+    <h5 class = 'intro'>In this experiment you will be listening to short groups of sentences via the telephone handset,
+    and giving your opinion of the speech you hear.
+    <br><br>
+    On the table in front of you is a handset and a pair of stereo headphones. Please put the headphones on
+    and hold the handset as you would to your own comfort.
+    <br><br>
+    You will be presented with 24 short audio samples on the handset, and be asked to rate the quality on this
+    monitor, between the values of 1 and 5, relating to the following:
+    <br><br>
+    <ul class ='basic'>
+    <li class ='text'><b>5:</b> Excellent</li>
+    <li class ='text'><b>4:</b> Good</li>
+    <li class ='text'><b>3:</b> Fair</li>
+    <li class ='text'><b>2:</b> Poor</li>
+    <li class ='text'><b>1:</b> Bad</li>
+  </ul>
+  <br><br>
+    <center>When you are ready, please click 'Begin Test'.</center>
+  </h5>
+
+    <div class = 'controls'>
+      <a href ='#' onclick="loadPage('2'); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    </div>
+  </div>
+
+  <div id ="2" style='display:none;'>
+    <br><br>
+    <h5>Please Click 'Begin Test' on the Handset to enter a phonecall.</h5>
+    <br>
+    <h5>Once the phonecall has finished, please rate the quality below:</h5>
+    <br>
+    <div class = 'formArea'>
+    <h5 class ='testCount' id = 'test_status'>Test </h5>
+    <form name ="mosTest" method="post" name="buttons" id="mosTest" onsubmit="return false">
+    <center>
+    <ul class ='mosUL'>
+      <li class ='mosLI'>
+        <label for ='answer'>Bad
+          <input id ="answer" type="radio" name="test" value="1">
+        </label>
+        <label for ='answer'>Poor
+          <input id ="answer" type="radio" name="test" value="2">
+        </label>
+        <label for ='answer'>Fair
+          <input id ="answer" type="radio" name="test" value="3" checked>
+        </label>
+        <label for ='answer'>Good
+          <input id ="answer" type="radio" name="test" value="4">
+        </label>
+        <label for ='answer'>Excellent
+          <input id ="answer" type="radio" name="test" value="5">
+        </label>
+
+    </li>
+  </ul>
+</center>
+  </div>
+    <div class = 'controls'>
+      <center>
+    <a href='#' onclick="insertResult()"><div id = 'nextButton' class = 'nextTest'><h5 id ='submitButton' class = 'buttonLabel' >Next Test</div></h5></a>
+  </center>
+  </div>
+    </form>
+    <br><br><br>
+
+  </div>
+
+  <div id = '3' style = 'display:none;'>
+
+  <h5>Thank you for participating in this study, please remove your headphones and place the handset on the table in front of you.</h5>
+  <center>
+  <a href style ='color: white; font-style: sans;'= 'rating.html'>Admin Reload</a>
+</center>
+  </div>
+
+
+
+
+<script>
+
+window.onload = nextSample;
+
+var testNumber = 0;
+var result = new Array();
+
+
+function loadPage(page) {
+
+  var showDiv = document.getElementById(page).style.display='block';
+
+  if(page == '1')
+  {
+    document.getElementById('4').style.display='none';
+  }
+  else {
+    var hideDiv = document.getElementById(page-1).style.display='none';
+  }
+
+
+  return false;
+}
+
+
+function insertResult() {
+
+    var answerResult = document.querySelector("input[name='test']:checked").value;
+    result[result.length]=answerResult;
+    answerResult.toString();
+    show();
+    document.getElementById('mosTest').reset();
+    nextSample();
+}
+
+function show() {
+
+  var content = 'Results: ';
+  for(var i = 0; i < result.length; i++) {
+    content +=result[i]+', ' + "\n";
+  }
+}
+
+
+
+
+
+function nextSample(){
+
+testNumber = testNumber + 1;
+
+document.getElementById('test_status').innerHTML = "Test "+testNumber;
+  if(testNumber > 23)
+  {
+
+    document.getElementById('submitbutton'.innerHTML = 'Finish Test');
+
+  }
+  if(testNumber > 24){
+
+    alert('You have completed the test.');
+
+    console.log(result);
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(result);
+    hiddenElement.target ='_blank';
+    hiddenElement.download='results.csv';
+    hiddenElement.click();
+
+    loadPage('3');
+  }
+
+}
+
+</script>
+
+
+</body>
+</html>
