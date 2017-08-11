@@ -59,19 +59,19 @@ void signalAnimation(){
    if((counter <= 9))
    {
      //Set Color change from Red-Orange after two bars, Orange-Green after four
-     if((counter > 0) && (counter <= 2))
+     if((counter > 0) && (counter <= 3))
      {
        fill(232, 78, 79);
      }
-     else if((counter > 2) && (counter <= 4))
+     else if((counter > 3) && (counter <= 5))
      {
       fill(232,152,78);
      }
-     else if((counter >4) && (counter <=6))
+     else if((counter >5) && (counter <=7))
      {
        fill(232, 195, 78);
      }
-     else if((counter > 6) && (counter <= 8))
+     else if((counter > 7) && (counter <= 9))
      {
        fill(197, 224,75);
      }
