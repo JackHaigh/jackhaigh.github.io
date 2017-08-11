@@ -59,17 +59,21 @@ void signalAnimation(){
    if((counter <= 9))
    {
      //Set Color change from Red-Orange after two bars, Orange-Green after four
-     if(counter <= 3)
+     if((counter > 0) && (counter <= 2))
      {
        fill(232, 78, 79);
      }
-     else if((counter > 3) && (counter <= 7))
+     else if((counter > 2) && (counter <= 4))
      {
-      fill(255, 217, 80);
+      fill(232,152,78);
      }
-     else if((counter >7) && (counter <=10))
+     else if((counter >4) && (counter <=6))
      {
-       fill(102, 204, 102);
+       fill(232, 195, 78);
+     }
+     else if((counter > 6) && (counter <= 8))
+     {
+       fill(197, 224,75);
      }
      rect(x, 380, 20, -expo);
      //Draw sixth bar based on if remainder of the current Millis count/3 is equal to 0
