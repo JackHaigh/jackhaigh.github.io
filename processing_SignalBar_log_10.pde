@@ -45,6 +45,7 @@ void draw(){
 
 }
 
+
 void signalAnimation(){
   
    noStroke();
@@ -79,11 +80,22 @@ void signalAnimation(){
       {
       fill(102, 204, 102);
       rect(10*35, 380, 20, -10*(exp(sqrt(10))));
+      if(timer%6 == 0 && timer%3 == 0)
+      {
+         rect(11*35, 380, 20, -11*(exp(sqrt(11)))); 
+
+      }
+      else{
+        stroke(3);
+        fill(14,61, 52);
+        rect(11*35, 380, 20, -11*(exp(sqrt(11))));
+      }
       }
       else{
       fill(14, 61, 52);
       stroke(3);
       rect(10*35, 380, 20, -10*(exp(sqrt(10))));
+      rect(11*35, 380, 20, -11*(exp(sqrt(11))));
       }
      }
    }
