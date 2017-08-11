@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider.css">
   <title>VoIP UI</title>
 
 
@@ -27,14 +28,14 @@
     and hold the handset as you would to your own comfort.
     <br><br>
     You will be presented with 24 short audio samples on the handset, and be asked to rate the quality on this
-    monitor, between the values of 1 and 5, relating to the following:
+    monitor, between the values of 0 and 100, relating to the following:
     <br><br>
     <ul class ='basic'>
-    <li class ='text'><b>5:</b> Excellent</li>
-    <li class ='text'><b>4:</b> Good</li>
-    <li class ='text'><b>3:</b> Fair</li>
-    <li class ='text'><b>2:</b> Poor</li>
-    <li class ='text'><b>1:</b> Bad</li>
+    <li class ='text'><b>100:</b> Excellent</li>
+    <li class ='text'><b>75:</b> Good</li>
+    <li class ='text'><b>50:</b> Fair</li>
+    <li class ='text'><b>25:</b> Poor</li>
+    <li class ='text'><b>0:</b> Bad</li>
   </ul>
   <br><br>
     <center>When you are ready, please click 'Begin Test'.</center>
@@ -53,28 +54,36 @@
     <br>
     <div class = 'formArea'>
     <h5 class ='testCount' id = 'test_status'>Test </h5>
+
     <form name ="mosTest" method="post" name="buttons" id="mosTest" onsubmit="return false">
     <center>
-    <ul class ='mosUL'>
-      <li class ='mosLI'>
-        <label for ='answer'>Bad
-          <input id ="answer" type="radio" name="test" value="1">
-        </label>
-        <label for ='answer'>Poor
-          <input id ="answer" type="radio" name="test" value="2">
-        </label>
-        <label for ='answer'>Fair
-          <input id ="answer" type="radio" name="test" value="3" checked>
-        </label>
-        <label for ='answer'>Good
-          <input id ="answer" type="radio" name="test" value="4">
-        </label>
-        <label for ='answer'>Excellent
-          <input id ="answer" type="radio" name="test" value="5">
-        </label>
+    <div class = 'labels'>
+          <p class = 'mosLab'>Bad</p>
+          <p class = 'mosLab'>Poor</p>
+          <p class = 'mosLab'>Fair</p>
+          <p class = 'mosLab'>Good</p>
+          <p class = 'mosLab'>Excellent</p>
+    </div>
+    <br>
+    <input id ='answer' list="tickmarks" type='range' min ='0' max = '100' step='1' onchange="printValue('answer','rangeValue2')" />
+        <datalist id="tickmarks">
+            <option value="0" label="Bad">
+            <option value="10">
+            <option value="20">
+            <option value="25" label="Poor">
+            <option value="30">
+            <option value="40">
+            <option value="50" label="Fair">
+            <option value="60">
+            <option value="70">
+            <option value="75" label ="Good">
+            <option value="80">
+            <option value="90">
+            <option value="100" label="Excellent">
+</datalist>
+        <br><br>
+        <input id="rangeValue2" type="text" size="2" value ='50'/>
 
-    </li>
-  </ul>
 </center>
   </div>
     <div class = 'controls'>
@@ -122,10 +131,16 @@ function loadPage(page) {
   return false;
 }
 
+function printValue(sliderID, textbox) {
+    var x = document.getElementById(textbox);
+    var y = document.getElementById(sliderID);
+    x.value = y.value;
+}
 
 function insertResult() {
 
-    var answerResult = document.querySelector("input[name='test']:checked").value;
+    //var answerResult = document.querySelector("input[name='test']:checked").value;
+    var answerResult = document.getElementById('answer').value;
     result[result.length]=answerResult;
     answerResult.toString();
     show();
@@ -140,8 +155,6 @@ function show() {
     content +=result[i]+', ' + "\n";
   }
 }
-
-
 
 
 
