@@ -68,7 +68,7 @@
     <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
 
     <div class = 'controls'>
-      <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+      <a href ='#' onclick="loadPage('2'); loadCue(); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
     </div>
   </div>
 
@@ -141,14 +141,16 @@ function loadPage(page) {
     var hideDiv = document.getElementById(page-1).style.display='none';
   }
 
-  if(page == '2' || '3'){
-
-    document.getElementsByTagName('canvas').dataprocessingsources='processing_SignalBar_log_10.pde';
-
-
-  }
-
   return false;
+}
+
+function loadCue(){
+
+  var container = document.getElementById('scale');
+  var content = container.innerHTML;
+  container.innerHTML=content;
+  //document.getElementById('scale').contentWindow.location.reload(true);
+
 }
 
 function updateSession() {

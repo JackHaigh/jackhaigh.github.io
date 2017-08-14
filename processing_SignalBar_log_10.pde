@@ -40,9 +40,9 @@ void setup(){
 }
 
 void draw(){
-    frameRate(30);
+    frameRate(60);
+    timer = millis();
     signalAnimation();
-
 }
 
 
@@ -79,12 +79,14 @@ void signalAnimation(){
      //Draw sixth bar based on if remainder of the current Millis count/3 is equal to 0
      if(counter == 9)
      {
-      timer = millis();
-      if(timer%3 == 0)
+      float ran = random(100);
+      println(ran);
+      if(ran < 80)
       {
+      
       fill(102, 204, 102);
       rect(10*35, 380, 20, -10*(exp(sqrt(10))));
-      if(timer%6 == 0 && timer%3 == 0)
+      if(ran < 20)
       {
          rect(11*35, 380, 20, -11*(exp(sqrt(11)))); 
 
