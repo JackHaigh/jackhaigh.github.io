@@ -80,7 +80,6 @@ void signalAnimation(){
      if(counter == 9)
      {
       float ran = random(100);
-      println(ran);
       if(ran < 80)
       {
       
