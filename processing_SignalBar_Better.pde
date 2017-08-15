@@ -41,11 +41,11 @@ void setup(){
 
 void draw(){
     frameRate(15);
-    float random = random(100);
+    float randomNum = random(100);
     timer = frameCount;
     signalAnimation(timer);
-    if(random < 50){
-      flashAnimation(timer, random);
+    if(randomNum < 50){
+      flashAnimation(timer, randomNum);
     }
     else{
       fill(14, 61, 52);
