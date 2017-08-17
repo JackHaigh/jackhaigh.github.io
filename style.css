@@ -133,7 +133,12 @@ margin: auto;
 
 }
 
+div.intro {
 
+  padding-left:auto;
+  padding-right: auto;
+
+}
 #timer {
 
   color: #ffffff;
@@ -204,6 +209,7 @@ margin: auto;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 img.phone {
 
