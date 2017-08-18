@@ -143,7 +143,7 @@ function updateSession() {
     alert("You have completed the test, please return the handset.")
   }
   sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
-  ringtone = new Audio('ringtone.mp3');
+  ringtone = new Audio('ringtone_NORMALISED.wav');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
   headChange.innerHTML = names[sessionNumber-1];
