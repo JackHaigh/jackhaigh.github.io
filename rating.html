@@ -102,6 +102,32 @@
 
 <script>
 
+var names = [
+"Michael Matthews", 
+"Megan Lawson", 
+"Linda Fowler", 
+"Joseph Porter", 
+"Billy Carroll", 
+"Martha Berry", 
+"Judy Barnes", 
+"Gregory Porter", 
+"Jeremy King", 
+"Carolyn Philips" ,
+"Jose Hanson", 
+"Patricia Wood", 
+"Michael Matthews", 
+"Joseph Porter", 
+"Linda Fowler", 
+"Megan Lawson", 
+"Gregory Porter", 
+"Billy Carroll", 
+"Martha Berry", 
+"Patricia Wood", 
+"Judy Barnes", 
+"Carolyn Philips" ,
+"Jeremy King", 
+"Jose Hanson" ];
+	
 window.onload = nextSample;
 
 var testNumber = 0;
@@ -153,7 +179,7 @@ function nextSample(){
 
 testNumber = testNumber + 1;
 
-document.getElementById('test_status').innerHTML = "Test "+testNumber;
+document.getElementById('test_status').innerHTML = "Test "+testNumber+" - "+names[testnumber];
   if(testNumber > 23)
   {
 
