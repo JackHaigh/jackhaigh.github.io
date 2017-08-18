@@ -108,12 +108,89 @@
 
 
 <script>
-var names = ["Megan Lawson", "Michael Matthews", "Linda Fowler", "Joseph Porter", "Patricia Wood", "Billy Carroll", "Martha Berry", "Gregory Porter", "Judy Barnes", "Jeremy King" ,"Carolyn Philips", "Jose Hanson",
-"Megan Lawson", "Michael Matthews", "Linda Fowler", "Joseph Porter", "Patricia Wood", "Billy Carroll", "Martha Berry", "Gregory Porter", "Judy Barnes", "Jeremy King" ,"Carolyn Philips", "Jose Hanson" ];
-var audioTrack = ["F1_LOW.wav", "M1_LOW.wav", "F2_LOW.wav", "M2_LOW.wav", "F1_MEDIUM.wav", "M1_MEDIUM.wav", "F2_MEDIUM.wav", "M2_MEDIUM.wav", "F1_HIGH.wav", "M1_HIGH.wav", "F2_HIGH.wav", "M2_HIGH.wav",
-"F1_LOW.wav", "M1_LOW.wav", "F2_LOW.wav", "M2_LOW.wav", "F1_MEDIUM.wav", "M1_MEDIUM.wav", "F2_MEDIUM.wav", "M2_MEDIUM.wav", "F1_HIGH.wav", "M1_HIGH.wav", "F2_HIGH.wav", "M2_HIGH.wav"];
-var avatar = ["img/avatars/f1.jpg", "img/avatars/m1.jpg", "img/avatars/f2.jpg", "img/avatars/m2.jpg", "img/avatars/f3.jpg", "img/avatars/m3.jpg", "img/avatars/f4.jpg", "img/avatars/m4.jpg", "img/avatars/f5.jpg", "img/avatars/m5.jpg", "img/avatars/f6.jpg", "img/avatars/m6.jpg",
-"img/avatars/f1.jpg", "img/avatars/m1.jpg", "img/avatars/f2.jpg", "img/avatars/m2.jpg", "img/avatars/f3.jpg", "img/avatars/m3.jpg", "img/avatars/f4.jpg", "img/avatars/m4.jpg", "img/avatars/f5.jpg", "img/avatars/m5.jpg", "img/avatars/f6.jpg", "img/avatars/m6.jpg"];
+var names = [
+"Michael Matthews", 
+"Megan Lawson", 
+"Linda Fowler", 
+"Joseph Porter", 
+"Billy Carroll", 
+"Martha Berry", 
+"Judy Barnes", 
+"Gregory Porter", 
+"Jeremy King", 
+"Carolyn Philips" ,
+"Jose Hanson", 
+"Patricia Wood", 
+
+"Michael Matthews", 
+"Joseph Porter", 
+"Linda Fowler", 
+"Megan Lawson", 
+"Gregory Porter", 
+"Billy Carroll", 
+"Martha Berry", 
+"Patricia Wood", 
+"Judy Barnes", 
+"Carolyn Philips" ,
+"Jeremy King", 
+"Jose Hanson" ];
+
+
+var audioTrack = [
+"M1_HIGH.wav",
+"F1_MEDIUM.wav",
+"F2_MEDIUM.wav",
+"M1_HIGH.wav",
+"M1_MEDIUM.wav",
+"F1_HIGH.wav",
+"F2_MEDIUM.wav",
+"M1_LOW.wav",
+"M1_MEDIUM.wav",
+"F2_HIGH.wav",
+"M2_MEDIUM.wav",
+"F1_MEDIUM.wav",
+
+"M2_LOW.wav",
+"M2_MEDIUM.wav",
+"F1_LOW.wav",
+"F2_HIGH.wav",
+"M2_HIGH.wav"
+"M2_LOW.wav",
+"F2_LOW.wav",
+"F2_LOW.wav",
+"F1_LOW.wav",
+"F1_HIGH.wav",
+"M1_LOW.wav",
+"M2_HIGH.wav",];
+
+
+var avatar = [
+"img/avatars/m1.jpg", 
+"img/avatars/f1.jpg", 
+"img/avatars/f2.jpg", 
+"img/avatars/m2.jpg", 
+"img/avatars/m3.jpg", 
+"img/avatars/f3.jpg", 
+"img/avatars/f4.jpg", 
+"img/avatars/m4.jpg", 
+"img/avatars/m5.jpg", 
+"img/avatars/f5.jpg", 
+"img/avatars/m6.jpg", 
+"img/avatars/f6.jpg",
+
+"img/avatars/m1.jpg", 
+"img/avatars/m2.jpg", 
+"img/avatars/f1.jpg", 
+"img/avatars/f2.jpg", 
+"img/avatars/m3.jpg", 
+"img/avatars/m4.jpg", 
+"img/avatars/f3.jpg", 
+"img/avatars/f4.jpg", 
+"img/avatars/f5.jpg", 
+"img/avatars/f6.jpg", 
+"img/avatars/m5.jpg", 
+"img/avatars/m6.jpg"];
+  
 var sessionNumber = 0;
 var sample;
 var ringtone;
