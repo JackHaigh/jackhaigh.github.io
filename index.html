@@ -206,23 +206,36 @@ function loadPage(page) {
   }
   return false;
 }
-function loadCue(){
-  var container = document.getElementById('scale');
-  var content = container.innerHTML;
-  container.innerHTML=content;
-  //document.getElementById('scale').contentWindow.location.reload(true);
-}
 function updateSession() {
   sessionNumber = sessionNumber + 1;
   if(sessionNumber > names.length){
     sessionNumber = 1;
     alert("You have completed the test, please return the handset.")
   }
-  sample = new Audio('samples/'+audioTrack[sessionNumber-1]);
-  ringtone = new Audio('ringtone_NORMALISED.wav');
+  track = audioTrack[sessionNumber-1];
+  sample = new Audio('samples/'+track);
+  ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
   headChange.innerHTML = names[sessionNumber-1];
+  if(track.charAt(3) == 'L')
+  {
+    //Low Quality Animation
+  console.log('Low Quality');
+  //document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Low.pde');
+  }
+  else if(track.charAt(3) == 'M')
+  {
+    //Medium Quality Animation
+    console.log('Medium Quality');
+  //document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Medium.pde');
+  }
+  else {
+    //High Quality Animation
+    console.log('High Quality');
+  //document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Better.pde');
+}
+
 }
 window.onload = updateSession;
 </script>
