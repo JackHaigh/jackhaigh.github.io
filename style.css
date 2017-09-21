@@ -96,7 +96,8 @@ h5.buttonLabel {
 
 ul.basic {
 
-  padding-left: 30%;
+  padding-left: auto;
+  padding-right: auto;
   list-style: none;
   line-height: 30px;
 
