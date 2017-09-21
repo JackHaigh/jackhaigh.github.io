@@ -72,7 +72,7 @@
 
   <div id="2" style="display:none" class = 'stimulusArea'>
     <center>
-  <canvas id ='scale' data-processing-sources = 'processing_SignalBar_Better.pde'></canvas>
+  <canvas id ='scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
 </center>
     <div class = 'controls'>
       <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
@@ -85,7 +85,7 @@
 
     <p id = 'timer'></p>
     <center>
-    <canvas  id = 'scale' data-processing-sources = 'processing_SignalBar_Better.pde'></canvas>
+    <canvas  id = 'scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
   </center>
     <div class = 'controls'>
       <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
@@ -217,23 +217,24 @@ function updateSession() {
   ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
+  var pjs = Processing.getInstanceById('processing_SignalBarv2.pde');
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
   {
     //Low Quality Animation
   console.log('Low Quality');
-  document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Low.pde');
+  pjs.getNum(3);
   }
   else if(track.charAt(3) == 'M')
   {
     //Medium Quality Animation
     console.log('Medium Quality');
-  document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Medium.pde');
+    pjs.getNum(5);
   }
   else {
     //High Quality Animation
     console.log('High Quality');
-  document.getElementById("scale").setAttribute('data-processing-sources','processing_SignalBar_Better.pde');
+    pjs.getNum(9);
 }
 
 }
