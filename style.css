@@ -36,14 +36,14 @@ div.stimulusArea {
 }
 
 div.controlsRating {
-    position: fixed;
+    position: relative;
     bottom: 5%;
     width: 100%;
   
 }
 div.controls {
 
-    position: relative;
+    position: fixed;
     bottom: 5%;
     width: 100%;
 
