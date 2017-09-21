@@ -37,7 +37,7 @@ div.stimulusArea {
 
 div.controls {
 
-    position: fixed;
+    position: relative;
     bottom: 5%;
     width: 100%;
 
