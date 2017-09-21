@@ -43,7 +43,7 @@ void draw(){
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
     
-    bars = 5;
+    bars = getNum(bars);
     timer = frameCount;
     signalAnimation(timer, bars);
     if(randomNum < 50){
@@ -55,6 +55,12 @@ void draw(){
       rect(10*35, 380, 20, -10*(exp(sqrt(10))));
       rect(11*35, 380, 20, -11*(exp(sqrt(11))));
     }
+}
+
+int getNum(int bar){
+  
+  return bar;
+  
 }
 
 
