@@ -54,6 +54,17 @@ p {
 h5 {
 
   color: #ffffff;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-style: bold;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+h5.introRating {
+
+  color: #ffffff;
   font-size: 40px;
   font-family: sans-serif;
   font-style: bold;
