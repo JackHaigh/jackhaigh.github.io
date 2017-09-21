@@ -217,7 +217,7 @@ function updateSession() {
   ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
-  var pjs = Processing.getInstanceById('processing_SignalBarv2.pde');
+  var pjs = Processing.getInstanceById('processing_SignalBarv2');
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
   {
