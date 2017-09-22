@@ -49,6 +49,11 @@ div.controls {
 
 }
 
+div.formArea {
+ 
+  padding-top: 30px;
+  
+}
 p {
   color: #ffffff;
   font-size: 30px;
