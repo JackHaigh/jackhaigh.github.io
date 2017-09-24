@@ -223,18 +223,18 @@ function updateSession() {
   {
     //Low Quality Animation
   console.log('Low Quality');
-  pjs.loop(3);
+  pjs.getVal(3)
   }
   else if(track.charAt(3) == 'M')
   {
     //Medium Quality Animation
     console.log('Medium Quality');
-    pjs.loop(5);
+    pjs.getVal(5);
   }
   else {
     //High Quality Animation
     console.log('High Quality');
-    pjs.loop(9);
+    pjs.getVal(9);
 }
 
 }
