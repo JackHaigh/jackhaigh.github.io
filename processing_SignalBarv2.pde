@@ -7,6 +7,8 @@ float y = 0;
 int counter = 0;
 int timer = 0;
 
+var value;
+
 void setup(){
  
   size(500, 500);
@@ -35,11 +37,24 @@ void setup(){
     textSize(30);
     text("Call Quality", 180, 35);
     
-
-}
-
-void getVal(int value){
-value = bars;
+  headChange.innerHTML = names[sessionNumber-1];
+  if(track.charAt(3) == 'L')
+  {
+    //Low Quality Animation
+  console.log('Low Quality');
+  value = 3;
+  }
+  else if(track.charAt(3) == 'M')
+  {
+    //Medium Quality Animation
+    console.log('Medium Quality');
+    value = 5;
+  }
+  else {
+    //High Quality Animation
+    console.log('High Quality');
+    value = 9;
+  }
 }
 
 void draw(){
