@@ -7,8 +7,6 @@ float y = 0;
 int counter = 0;
 int timer = 0;
 
-var value;
-
 void setup(){
  
   size(500, 500);
@@ -36,25 +34,6 @@ void setup(){
     text("Excellent", 340, 400);
     textSize(30);
     text("Call Quality", 180, 35);
-  var headChange = document.getElementById('test_status');   
-  headChange.innerHTML = names[sessionNumber-1];
-  if(track.charAt(3) == 'L')
-  {
-    //Low Quality Animation
-  //console.log('Low Quality');
-  value = 3;
-  }
-  else if(track.charAt(3) == 'M')
-  {
-    //Medium Quality Animation
-    //console.log('Medium Quality');
-    value = 5;
-  }
-  else {
-    //High Quality Animation
-   // console.log('High Quality');
-    value = 9;
-  }
 }
 
 void draw(){
@@ -62,7 +41,6 @@ void draw(){
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
     bars = value;
-    print(bars);
     timer = frameCount;
     signalAnimation(timer, bars);
     if(randomNum < 50){
