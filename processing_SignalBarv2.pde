@@ -36,7 +36,7 @@ void setup(){
     text("Excellent", 340, 400);
     textSize(30);
     text("Call Quality", 180, 35);
-    
+ var headChange = document.getElementById('test_status');   
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
   {
