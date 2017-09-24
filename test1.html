@@ -218,23 +218,24 @@ function updateSession() {
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
   var pjs = Processing.getInstanceById('scale');
+  var value;
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
   {
     //Low Quality Animation
   console.log('Low Quality');
-  pjs.getVal(3)
+  value = 3;
   }
   else if(track.charAt(3) == 'M')
   {
     //Medium Quality Animation
     console.log('Medium Quality');
-    pjs.getVal(5);
+    value = 5;
   }
   else {
     //High Quality Animation
     console.log('High Quality');
-    pjs.getVal(9);
+    value = 9;
 }
 
 }
