@@ -61,6 +61,7 @@ void draw(){
     frameRate(15);
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
+    bars = value;
     timer = frameCount;
     signalAnimation(timer, bars);
     if(randomNum < 50){
