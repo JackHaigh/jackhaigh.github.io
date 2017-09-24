@@ -1,6 +1,6 @@
 //Declare Variable for the For Loop in setup();
 float i;
-int bars = 0;
+int bars;
 // Variables declared for Animation function
 int x = 0;
 float y = 0;
@@ -38,11 +38,14 @@ void setup(){
 
 }
 
-void draw(int bar){
+void getVal(int value){
+value = bars;
+}
+
+void draw(){
     frameRate(15);
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
-    bars = bar;
     timer = frameCount;
     signalAnimation(timer, bars);
     if(randomNum < 50){
@@ -55,8 +58,6 @@ void draw(int bar){
       rect(11*35, 380, 20, -11*(exp(sqrt(11))));
     }
 }
-
-
 
 
 void signalAnimation(int count, int barNum){
