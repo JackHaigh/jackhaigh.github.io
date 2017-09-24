@@ -41,18 +41,18 @@ void setup(){
   if(track.charAt(3) == 'L')
   {
     //Low Quality Animation
-  console.log('Low Quality');
+  //console.log('Low Quality');
   value = 3;
   }
   else if(track.charAt(3) == 'M')
   {
     //Medium Quality Animation
-    console.log('Medium Quality');
+    //console.log('Medium Quality');
     value = 5;
   }
   else {
     //High Quality Animation
-    console.log('High Quality');
+   // console.log('High Quality');
     value = 9;
   }
 }
