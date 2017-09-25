@@ -55,7 +55,7 @@ void drawBars() {
 void getVal(int num){
   
   bars = num;
-  println(num);
+  //println(num);
 } 
 
 void draw(){
