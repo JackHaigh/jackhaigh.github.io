@@ -14,7 +14,23 @@ void setup(){
   stroke(0);
   fill(9, 39, 33);
   rect(3,3,492,492,20);
-// Construct outlines of scale
+
+  drawBars();
+
+    fill(255);
+    textSize(15);
+    text("Bad", 70, 400);
+    text("Fair", 215, 400);
+    text("Excellent", 340, 400);
+    textSize(30);
+    text("Call Quality", 180, 35);
+    
+    getVal(9);
+}
+
+void drawBars() {
+  
+  // Construct outlines of scale
   for(i = 2; i <=11; i++)
   {
     
@@ -25,15 +41,7 @@ void setup(){
 
 
   }
-
-
-    fill(255);
-    textSize(15);
-    text("Bad", 70, 400);
-    text("Fair", 215, 400);
-    text("Excellent", 340, 400);
-    textSize(30);
-    text("Call Quality", 180, 35);
+  
 }
 
 void getVal(int num){
