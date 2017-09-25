@@ -65,16 +65,21 @@ void draw(){
 
     float randomNum = random(100);
     int   cur_bar   = bars;
-    
+    if(cur_bar < 0){
+      draw_bars(0, 10);
+    }
+    else {
     if (randomNum < 20) {
       cur_bar = bars + 2;
     } else if (randomNum < 50) {
       cur_bar = bars + 1;
     }
+    }
     
     if (cur_bar > 10) {
       cur_bar = 10;
     }
+    
     
     draw_bars(cur_bar, 10);
     
