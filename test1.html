@@ -142,9 +142,13 @@ function updateSession() {
   ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var pjs = Processing.getInstanceById('scale');
-  var value = 9;
+  var value;
   var headChange = document.getElementById('test_status');
   headChange.innerHTML = names[sessionNumber-1];
+  
+  if(sessionNumber == 1){
+    value = 9;
+  }
   if(track.charAt(3) == 'L')
   {
     //Low Quality Animation
