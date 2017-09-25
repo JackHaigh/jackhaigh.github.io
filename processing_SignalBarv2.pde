@@ -59,7 +59,7 @@ void getVal(int num){
 
 void draw(){
     frameRate(15);
-    clear();
+    //clear();
   
     draw_background();
 
