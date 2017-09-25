@@ -14,7 +14,7 @@ void setup()
   draw_background();
   draw_bars(2, 11);
   draw_text();
-  getVal(6);
+  //getVal(-2);
 }
 
 void draw_background()
