@@ -145,6 +145,10 @@ function updateSession() {
   var pjs = Processing.getInstanceById('scale');
   var value;
   headChange.innerHTML = names[sessionNumber-1];
+  barGen();
+}
+  
+function barGen(){
   if(track.charAt(3) == 'L')
   {
     //Low Quality Animation
@@ -211,7 +215,7 @@ window.onload = updateSession;
   <canvas id ='scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
 </center>
     <div class = 'controls'>
-      <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
+      <a href ='#' onclick="loadPage('3'); barGen(); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
       <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
     </div>
 
