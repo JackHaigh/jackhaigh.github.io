@@ -1,3 +1,4 @@
+
 //Declare Variable for the For Loop in setup();
 float i;
 int bars;
@@ -7,16 +8,25 @@ float y = 0;
 int counter = 0;
 int timer = 0;
 
-void setup(){
- 
+void setup()
+{
   size(500, 500);
+  draw_background();
+  draw_bars(2, 11);
+  draw_text();
+  getVal(6);
+}
+
+void draw_background()
+{
   background(14, 61, 52);
   stroke(0);
   fill(9, 39, 33);
-  rect(3,3,492,492,20);
+  rect(3,3,492,492,20);  
+}
 
-  drawBars();
-
+void draw_text()
+{
     fill(255);
     textSize(15);
     text("Bad", 70, 400);
@@ -24,7 +34,6 @@ void setup(){
     text("Excellent", 340, 400);
     textSize(30);
     text("Call Quality", 180, 35);
-    
 }
 
 void drawBars() {
@@ -36,22 +45,41 @@ void drawBars() {
       fill(14, 61, 52);
       stroke(3);
       float expo = i*(exp(sqrt(i)));
-      rect((i)*35, 380, 20, -1 * expo);
+      rect(i*35, 380, 20, -1 * expo);
 
 
   }
   
 }
-
 void getVal(int num){
   
   bars = num;
   println(num);
-}
+} 
 
 void draw(){
-println(bars);
     frameRate(15);
+    clear();
+  
+    draw_background();
+
+    float randomNum = random(100);
+    int   cur_bar   = bars;
+    
+    if (randomNum < 20) {
+      cur_bar = bars + 2;
+    } else if (randomNum < 50) {
+      cur_bar = bars + 1;
+    }
+    
+    if (cur_bar > 10) {
+      cur_bar = 10;
+    }
+    
+    draw_bars(cur_bar, 10);
+    
+    draw_text();
+    /*
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
     //bars = 5;
@@ -66,6 +94,7 @@ println(bars);
       rect(10*35, 380, 20, -10*(exp(sqrt(10))));
       rect(11*35, 380, 20, -11*(exp(sqrt(11))));
     }
+    */
 }
 
 
@@ -88,6 +117,32 @@ void signalAnimation(int count, int barNum){
     rect(35, 380, 25, -70);
   
 }
+
+void draw_bars(int count, int max)
+{
+  if (count > max) {
+    println("Count > Max");
+    return;
+  }
+  
+  count = count + 2;
+  max   = max   + 2;
+  
+  noStroke();
+  
+  for (int i = 2; i < count; i++) {
+    colorDecider(i);
+    float size = i * exp(sqrt(i));
+    rect(i * 35, 380, 20, -size);
+  }
+  
+  for (int i = count; i < max; i++) {
+    fill(14, 61, 52);
+    float size = i * exp(sqrt(i));
+    rect(i * 35, 380, 20, -size);
+  }
+}
+
 
 void flashAnimation(int time, float ran, int barNum){
 
