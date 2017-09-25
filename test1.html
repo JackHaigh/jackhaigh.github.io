@@ -118,8 +118,6 @@ var avatar = [
 var sessionNumber = 0;
 var sample;
 var ringtone;
-  var pjs = Processing.getInstanceById('scale');
-  var value = 9;
 // enable vibration support
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 function loadPage(page) {
@@ -143,6 +141,8 @@ function updateSession() {
   sample = new Audio('samples/'+track);
   ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
+  var pjs = Processing.getInstanceById('scale');
+  var value;
   var headChange = document.getElementById('test_status');
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
