@@ -32,81 +32,6 @@
 
 
   <script type = 'text/javascript' src = "processing.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-  // The script prevents links from opening in mobile safari. https://gist.github.com/1042026
-  (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
-  $(document).ready(function(){
-          // iOS web app full screen hacks.
-          if(window.navigator.standalone == true) {
-                  // make all link remain in web app mode.
-                  $('a').click(function() {
-                          window.location = $(this).attr('href');
-              return false;
-                  });
-          }
-  });
-  </script>
-
-</head>
-
-<body>
-
-
-<div class = 'head'>
-
-  <img id = 'mainAvatar' class='avatar' src = 'img/avatar.png' width = '100' height = '100'>
-  <p id="test_status" class='headText'>Test</p>
-
-</div>
-
-  <div id="1">
-
-    <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
-
-    <div class = 'controls'>
-      <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
-    </div>
-  </div>
-
-  <div id="2" style="display:none" class = 'stimulusArea'>
-    <center>
-  <canvas id ='scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
-</center>
-    <div class = 'controls'>
-      <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
-      <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
-    </div>
-
-  </div>
-
-  <div id = "3" style="display:none" class = 'stimulusArea'>
-
-    <p id = 'timer'></p>
-    <center>
-    <canvas  id = 'scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
-  </center>
-    <div class = 'controls'>
-      <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
-    </div>
-
-
-  </div>
-
-
-  <div id = "4" style="display:none">
-
-
-    <h5>Please use the scale provided to rate the quality of this sample. Click Next to proceed to the next sample.</h5>
-    <div class = 'controls'>
-      <a href = '#' onclick="loadPage('1'); updateSession(); return false;"><div id ="nextButton"><h5 class ='buttonLabel'>Next Test</h5></div></a>
-    </div>
-
-  </div>
-
-
-
 <script>
 var names = [
 "Michael Matthews", 
@@ -217,7 +142,7 @@ function updateSession() {
   ringtone = new Audio('ringtone.mp3');
   document.getElementById("mainAvatar").src = avatar[sessionNumber-1];
   var headChange = document.getElementById('test_status');
-  var pjs = Processing.getInstanceById(scale);
+  var pjs = Processing.getInstanceById('scale');
   var value;
   headChange.innerHTML = names[sessionNumber-1];
   if(track.charAt(3) == 'L')
@@ -243,6 +168,81 @@ window.onload = updateSession;
 
 
 </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  // The script prevents links from opening in mobile safari. https://gist.github.com/1042026
+  (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
+  $(document).ready(function(){
+          // iOS web app full screen hacks.
+          if(window.navigator.standalone == true) {
+                  // make all link remain in web app mode.
+                  $('a').click(function() {
+                          window.location = $(this).attr('href');
+              return false;
+                  });
+          }
+  });
+  </script>
+
+</head>
+
+<body>
+
+
+<div class = 'head'>
+
+  <img id = 'mainAvatar' class='avatar' src = 'img/avatar.png' width = '100' height = '100'>
+  <p id="test_status" class='headText'>Test</p>
+
+</div>
+
+  <div id="1">
+
+    <h5>Please listen to the following audio sample, and rate its quality on the scale provided</h5>
+
+    <div class = 'controls'>
+      <a href ='#' onclick="loadPage('2'); ringtone.play(); navigator.vibrate(1000); return false;"><div id ='nextButton'><h5 class ='buttonLabel'>Begin Test</h5></div></a>
+    </div>
+  </div>
+
+  <div id="2" style="display:none" class = 'stimulusArea'>
+    <center>
+  <canvas id ='scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
+</center>
+    <div class = 'controls'>
+      <a href ='#' onclick="loadPage('3'); ringtone.pause(); navigator.vibrate(0); sample.play(); return false;"><div id ="answerButton"><img class = "phone" src='img/phone_icon_answer.png'></div></a>
+      <div id ="declineButton"><img class ='phone' src ='img/phone_icon_decline.png'></div>
+    </div>
+
+  </div>
+
+  <div id = "3" style="display:none" class = 'stimulusArea'>
+
+    <p id = 'timer'></p>
+    <center>
+    <canvas  id = 'scale' data-processing-sources = 'processing_SignalBarv2.pde'></canvas>
+  </center>
+    <div class = 'controls'>
+      <a href = '#' onclick="loadPage('4'); sample.pause (); return false;"><div id ="endCallButton"><img class = 'phone' src='img/phone_icon_decline.png'></div></a>
+    </div>
+
+
+  </div>
+
+
+  <div id = "4" style="display:none">
+
+
+    <h5>Please use the scale provided to rate the quality of this sample. Click Next to proceed to the next sample.</h5>
+    <div class = 'controls'>
+      <a href = '#' onclick="loadPage('1'); updateSession(); return false;"><div id ="nextButton"><h5 class ='buttonLabel'>Next Test</h5></div></a>
+    </div>
+
+  </div>
+
+
+
+
 
 </body>
 </html>
