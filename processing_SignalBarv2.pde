@@ -14,6 +14,7 @@ void setup()
   draw_background();
   draw_bars(2, 11);
   draw_text();
+  //1 == BAD || 4 == MEDIUM || 8 == BAD
   getVal(-1);
 }
 
@@ -59,7 +60,6 @@ void getVal(int num){
 
 void draw(){
     frameRate(15);
-    //clear();
   
     draw_background();
 
@@ -74,6 +74,9 @@ void draw(){
     } else if (randomNum < 50) {
       cur_bar = bars + 1;
     }
+      else if (randomNum < 70) {
+      cur_bar = bars - 1;
+    }
     }
     
     if (cur_bar > 10) {
@@ -82,46 +85,10 @@ void draw(){
     
     
     draw_bars(cur_bar, 10);
-    
     draw_text();
-    /*
-    float randomNum = random(100);
-    //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
-    //bars = 5;
-    timer = frameCount;
-    signalAnimation(timer, bars);
-    if(randomNum < 50){
-      flashAnimation(timer, randomNum, bars);
-    }
-    else{
-      fill(14, 61, 52);
-      stroke(3);
-      rect(10*35, 380, 20, -10*(exp(sqrt(10))));
-      rect(11*35, 380, 20, -11*(exp(sqrt(11))));
-    }
-    */
+
 }
 
-
-void signalAnimation(int count, int barNum){
-  
-   noStroke();
-   float expo = count*(exp(sqrt(count)));
-   x = x + 35;
-   
-   // Draws first five bars
-   if((count <= barNum))
-   {
-     colorDecider(count);
-     rect(x, 380, 20, -expo);
-   }
-    
-    
-    fill(9, 39, 33);
-    noStroke();
-    rect(35, 380, 25, -70);
-  
-}
 
 void draw_bars(int count, int max)
 {
