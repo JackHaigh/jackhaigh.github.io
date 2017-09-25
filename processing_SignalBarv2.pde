@@ -25,7 +25,6 @@ void setup(){
     textSize(30);
     text("Call Quality", 180, 35);
     
-    getVal(9);
 }
 
 void drawBars() {
