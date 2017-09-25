@@ -36,11 +36,17 @@ void setup(){
     text("Call Quality", 180, 35);
 }
 
+void getVal(int num){
+  
+  bars = num;
+  println(num);
+}
+
 void draw(){
     frameRate(15);
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
-    bars = 5;
+    //bars = 5;
     timer = frameCount;
     signalAnimation(timer, bars);
     if(randomNum < 50){
