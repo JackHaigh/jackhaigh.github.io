@@ -50,6 +50,7 @@ void getVal(int num){
 }
 
 void draw(){
+println(bars);
     frameRate(15);
     float randomNum = random(100);
     //Set amount of bars displayed - Low: 3 - Medium: 5 - High: 9
